@@ -21,6 +21,8 @@
 
         <security:csrf disabled="true"/>
 
+        <security:remember-me/>
+
     </security:http>
 
     <security:authentication-manager>

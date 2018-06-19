@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>Login</title>
-    <link href="<%=request.getContextPath()%>/resources/css/login.css/>" rel="stylesheet"/>
+    <link href="<c:url value="/resources/css/login.css"/>" rel="stylesheet"/>
 </head>
 <body>
 
@@ -30,6 +30,11 @@
         </tr>
         <tr>
             <td><input name="submit" type="submit" value="submit" /></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="remember-me" id="remember-me"/>
+                <label for="remember-me">Запомнить</label>
+            </td>
         </tr>
     </table>
 </form>
