@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Login</title>
+    <link href="<%=request.getContextPath()%>/resources/css/login.css/>" rel="stylesheet"/>
 </head>
 <body>
 
