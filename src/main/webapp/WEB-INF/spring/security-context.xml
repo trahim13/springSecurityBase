@@ -21,7 +21,7 @@
 
         <security:csrf disabled="true"/>
 
-        <security:remember-me/>
+        <security:remember-me data-source-ref="dataSource"/>
 
     </security:http>
 
