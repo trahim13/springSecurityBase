@@ -2,16 +2,18 @@
   Created by IntelliJ IDEA.
   User: User
   Date: 19.06.2018
-  Time: 20:46
+  Time: 22:20
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Home</title>
+    <title>User</title>
 </head>
 <body>
-Hello from security.
-#{message}
+
+User page.
+<a href="/logout">Logout</a>
+
 </body>
 </html>
