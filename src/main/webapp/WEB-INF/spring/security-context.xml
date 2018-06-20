@@ -8,7 +8,7 @@
     <security:http  use-expressions="true">
 
         <security:access-denied-handler error-page="/accessDenied"/>
-        <security:intercept-url pattern="/user" access="hasRole('ROLE_USER')"/>
+        <security:intercept-url pattern="/user" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
         <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
 
         <security:form-login login-page="/login"
@@ -39,12 +39,12 @@
 
 
             <!--<security:jdbc-user-service data-source-ref="dataSource" />-->
-            <security:password-encoder ref="noOpPasswordEncoder"/>
+            <security:password-encoder ref="bCrypt"/>
         </security:authentication-provider>
     </security:authentication-manager>
 
 
-    <bean id="noOpPasswordEncoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder">
-
+    <bean id="bCrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" >
+        <constructor-arg value="11" type="int" index="0"/>
     </bean>
 </beans>
