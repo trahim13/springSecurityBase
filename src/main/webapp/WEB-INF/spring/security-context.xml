@@ -25,13 +25,20 @@
 
     </security:http>
 
+    <bean id="jdbcDao" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="enableAuthorities" value="false"/>
+        <property name="enableGroups" value="true"/>
+    </bean>
     <security:authentication-manager>
-        <security:authentication-provider>
+        <security:authentication-provider user-service-ref="jdbcDao">
             <!--<security:user-service>-->
                 <!--<security:user name="user" password="{noop}user" authorities="ROLE_USER" />-->
                 <!--<security:user name="admin" password="{noop}admin" authorities="ROLE_ADMIN, ROLE_USER"/>-->
             <!--</security:user-service>-->
-            <security:jdbc-user-service data-source-ref="dataSource" />
+
+
+            <!--<security:jdbc-user-service data-source-ref="dataSource" />-->
             <security:password-encoder ref="noOpPasswordEncoder"/>
         </security:authentication-provider>
     </security:authentication-manager>
