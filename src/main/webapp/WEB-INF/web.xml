@@ -42,5 +42,17 @@
     </servlet-mapping>
     
     
+    <!--<security-constraint>-->
+        <!--<display-name>ssl</display-name>-->
+        <!--<web-resource-collection>-->
+            <!--<web-resource-name>all-pages</web-resource-name>-->
+            <!--<url-pattern>/*</url-pattern>-->
+        <!--</web-resource-collection>-->
+        <!--<user-data-constraint>-->
+            <!--<transport-guarantee>CONFIDENTIAL</transport-guarantee>-->
+        <!--</user-data-constraint>-->
+    <!--</security-constraint>-->
+    
+    
     
 </web-app>

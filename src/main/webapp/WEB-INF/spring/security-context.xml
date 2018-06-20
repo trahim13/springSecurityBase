@@ -7,6 +7,13 @@
 
     <security:http  use-expressions="true">
 
+        <security:intercept-url pattern="/**" requires-channel="https"/>
+        <security:port-mappings>
+            <security:port-mapping http="8080" https="8181"/>
+        </security:port-mappings>
+
+
+
         <security:access-denied-handler error-page="/accessDenied"/>
         <security:intercept-url pattern="/user" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')"/>
         <security:intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
@@ -21,7 +28,7 @@
 
         <security:csrf disabled="true"/>
 
-        <security:remember-me data-source-ref="dataSource"/>
+        <security:remember-me/>
 
     </security:http>
 
