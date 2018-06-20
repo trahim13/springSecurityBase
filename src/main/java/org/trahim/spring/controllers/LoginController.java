@@ -1,24 +1,37 @@
 package org.trahim.spring.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.trahim.spring.service.ProcessInterface;
 
 import java.security.Principal;
 
 @Controller
 public class LoginController {
 
+
+    @Autowired
+    private ProcessInterface process;
+
     @RequestMapping (value = "/admin", method = RequestMethod.GET)
-    public String adminPage() {
-        return "content/admin";
+    public ModelAndView adminPage(ModelAndView modelAndView) {
+
+        modelAndView.addObject("secured", process.getMessage());
+        modelAndView.setViewName("content/admin");
+        return modelAndView;
     }
 
     @RequestMapping (value = "/user", method = RequestMethod.GET)
-    public String userPage() {
-        return "content/user";
+    public ModelAndView userPage(ModelAndView modelAndView) {
+
+        modelAndView.addObject("secured", process.getMessage());
+
+        modelAndView.setViewName("content/user");
+        return modelAndView;
     }
 
 

@@ -14,6 +14,7 @@
 
 User page.
 <a href="/logout">Logout</a>
+<p>${secured}</p>
 
 </body>
 </html>
